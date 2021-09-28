@@ -28,8 +28,9 @@
                     <h3>Sección 1</h3>
                     <div class="row">
                         <div class="col-6">
+                            
                             <label >Identificacion</label>
-                            <input class="form-control" type="number" min="0" ng-model="cn.identificacion" required>
+                            <input class="form-control" type="number" name="identificacion" id="identificacion" min="0" ng-model="cn.identificacion" required>
                         </div>
                         <div class="col-6">
                             <label>Nombre</label>
@@ -169,7 +170,7 @@
         function controladorContactos($http) {
             var cn = this;
             cn.listarContactos = function () {
-                var url = "Peticiones.jsp";
+               // var url = "Peticiones.jsp";
                 var params = {
                     proceso: "listarcontacto"
                 };
@@ -181,7 +182,10 @@
                     cn.contactos = res.data.Contactos;
                 });
             };
-            cn.guardarContacto = function () {
+          
+        
+        
+        cn.guardarContacto = function () {
                 var contacto = {
                     proceso: "guardarContacto",
                     identificacion: cn.identificacion,
